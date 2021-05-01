@@ -1,0 +1,31 @@
+.dygraph-legend > span { display: inline; }
+.dygraph-legend > span.highlight { display: inline;}
+.dygraph-legend {
+  background-color:#222222;
+    border-style:solid;
+  border-width:1px;
+  border-color:#777777;
+    padding:5px;
+}
+
+.legend0 {
+  position:fixed;
+  display:none;
+  text-decoration:bold;
+  background-color:white;
+  border-style:solid;
+  border-width:1px;
+  border-color:#777777;
+    padding:5px;
+  z-index:999;
+}
+.navbar-brand {
+  height: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.legend-single > .legenddiv > span { display: none; }
+.legend-single >.legenddiv > span.highlight { display: inline;}
+.legenddiv > span { display: inline; }
+.legenddiv > span.highlight { display: inline;}
