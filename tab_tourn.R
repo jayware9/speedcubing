@@ -315,7 +315,6 @@ server_tourn <- function(input, output, session, graphData, appOptions, refresh)
              valueFormatter = "function(d) {var date = new Date(d);return date.toLocaleDateString('en-GB',{ year: 'numeric', month: 'short', day: 'numeric' });}") %>%
       dyAxis("y", valueFormatter = graphDataFin()$yValueFormatter, 
              axisLabelFormatter=graphDataFin()$yAxisFormatter) %>%
-      # dyLegend(show = "follow",labelsSeparateLines = T,width=150)#,labelsDiv="legenddiv")%>%
       dyLegend(show = "always",labelsSeparateLines = FALSE,labelsDiv=ns("legenddivF"),width=225) %>%
       dyCallbacks(
         highlightCallback = paste0("function(event, x, points, row, seriesName) {$('#",ns("legendF"),"').css({'display':'block','top':event.clientY+10+'px','left':event.clientX+10+'px'});$('#",ns("legendtextF"),"').text([",paste0("\"",graphDataFin()$data$label,"\"",collapse=", "),"][row]);}"),
