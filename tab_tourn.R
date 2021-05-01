@@ -130,7 +130,6 @@ server_tourn <- function(input, output, session, graphData, appOptions, refresh)
       ungroup() %>%
       mutate(datetime = datetime + adj) %>%
       spread(key, time) %>%
-      #unnest(c(key$personId, "datetime")) %>%
       arrange(datetime)
     
     if(selected$event %in% c("333mbf", "333mbo")) {
@@ -168,7 +167,6 @@ server_tourn <- function(input, output, session, graphData, appOptions, refresh)
              valueFormatter = "function(d) {var date = new Date(d);return date.toLocaleDateString('en-GB',{ year: 'numeric', month: 'short', day: 'numeric' });}") %>%
       dyAxis("y", valueFormatter = graphDataBest()$yValueFormatter, 
              axisLabelFormatter=graphDataBest()$yAxisFormatter) %>%
-      # dyLegend(show = "follow",labelsSeparateLines = T,width=150)#,labelsDiv="legenddiv")%>%
       dyLegend(show = "always",labelsSeparateLines = FALSE,labelsDiv=ns("legenddivB"),width=225) %>%
       dyCallbacks(
         highlightCallback = paste0("function(event, x, points, row, seriesName) {$('#",ns("legendB"),"').css({'display':'block','top':event.clientY+10+'px','left':event.clientX+10+'px'});$('#",ns("legendtextB"),"').text([",paste0("\"",graphDataBest()$data$label,"\"",collapse=", "),"][row]);}"),
