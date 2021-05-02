@@ -12,6 +12,7 @@ library(knitr)
 library(markdown)
 
 load("data/wca.rData")
+metadata <- readRDS("data/metadata.rds")
 
 source("tab_summ.R", local = TRUE)
 source("tab_rank.R", local = TRUE)
