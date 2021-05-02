@@ -1,0 +1,11 @@
+## Speedcubing
+
+This dashboard presents statistics and visualisations of results from [World Cube Association](https://www.worldcubeassociation.org) (WCA) speedcubing competitions. 
+
+This dashboard is based on competition results owned and maintained by the World Cube Association available at [www.worldcubeassociation.org/results/](https://www.worldcubeassociation.org/results/) as of `r format(metadata$updated, "%d %B %Y.")`
+
+### About Speedcubing
+
+Speedcubing involves solving Rubik's cubes and similar twisty puzzles as quickly as possible. Competitions are organised by the World Cube Association, with speedcubers competing across 17 events. Most events involve solving a puzzle as quickly as possible, with some variants including blindfolded solves, one-handed, and solving a puzzle in the fewest moves.
+
+Between `r text_data$start` and `r year(metadata$updated)` there have been __`r comma(text_data$cumm, 1)` cubers__ `r str_trim(selected$region_from)` that have competed in an official `r selected$event_name` competition event, and there have been __`r comma(selected$total_tourn, 1)` `r selected$event_name` competitions__ held across `r selected$region_name`.
